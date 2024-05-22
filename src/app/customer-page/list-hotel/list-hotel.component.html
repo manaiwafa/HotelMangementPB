@@ -1,0 +1,68 @@
+<section class="w3l-about-breadcrumb text-left">
+    <div class="breadcrumb-bg breadcrumb-bg-about py-sm-5 py-4">
+        <div class="container py-2">
+            <h2 class="title">Hotels</h2>
+
+            <ul class="breadcrumbs-custom-path mt-2">
+                <li><a routerLink="/customer">Home</a></li>
+                <li class="active"><span class="fa fa-arrow-right mx-2" aria-hidden="true"></span> Hotels </li>
+            </ul>
+        </div>
+
+    </div>
+</section>
+
+<nb-card>
+    <nb-card-body>
+
+        <section class="w3l-grids-3 py-1">
+            <div class="demo-inner-content">
+                <div class="container">
+                    <div class="flex-wrap search-wthree-field mt-md-5 mt-4">
+                        <form class="booking-form" [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+                            <div class="row book-form">
+                                <div class="form-input col-md-3 mt-md-0 mt-3">
+                                    <select formControlName="destination" name="selectpicker" class="selectpicker">
+                                        <option value="">Destinaion</option>
+                                        <option *ngFor="let region of regions" [value]="region.id">{{region.ville}}, {{region.pays}}</option>
+
+                                    </select>
+                                </div>
+                                <div class="form-input col-md-3 mt-md-0 mt-3">
+                                    <input  formControlName="period" nbInput placeholder="JJ/MM/YYYY" [nbDatepicker]="formpicker">
+                                    <nb-rangepicker #formpicker></nb-rangepicker>
+                                </div>
+                                <div class="form-input col-md-3 mt-md-0 mt-3">
+                                    <p-overlayPanel #op>
+                                        <ngx-search-room  [rooms]="this.searchedPeriode?.rooms" (roomEmitter)="roomEmitter($event)"></ngx-search-room>
+                                    </p-overlayPanel>
+
+                                    <button (click)="op.toggle($event)" style="padding: 0px 55px;"
+                                        class="btn btn-style btn-secondary" type="button"><span
+                                            class="fa fa-bed mr-3"></span>Chambres</button>
+                                </div>
+                                <div class="bottom-btn col-md-3 mt-md-0 mt-3">
+                                    <button class="btn btn-style btn-secondary" type="submit"><span
+                                            class="fa fa-search mr-3" aria-hidden="true"></span> Search</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container py-md-5">
+                <div class="title-content text-left mb-lg-5 mb-4">
+                    <h6 class="sub-title">Result</h6>
+                    <h3 class="hny-title">Available Hotels</h3>
+                </div>
+                <div class="row bottom-ab-grids">
+                    <div *ngFor="let hotel of hotels" class="col-lg-6 subject-card mt-lg-0 mt-4">
+                        <ngx-hotel-card [hotel]="hotel"></ngx-hotel-card>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </nb-card-body>
+</nb-card>

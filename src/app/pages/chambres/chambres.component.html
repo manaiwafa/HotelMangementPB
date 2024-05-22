@@ -1,0 +1,23 @@
+
+  <H1>Votre hôtel compte sur vous</H1>
+
+<div class="grid-container">
+  <ng-container *ngFor="let chambre of chambres">
+    <div class="grid-item">
+      <!-- Image -->
+      <img src="/assets/images/LL.jpg" class="background-image">
+
+      <!-- Informations sur la chambre -->
+      <div class="chambre-info">
+        <p>Numero: {{ chambre.numero }}</p>
+        <p>Etage: {{ chambre.etage }}</p>
+        <p>Nettoyer: {{ chambre.nettoyerr }}</p>
+
+        <!-- Bouton de détail de la chambre -->
+        <div class="button-container">
+          <button pButton pRipple icon="pi pi-check" class="p-button-rounded p-button-warningr-2" routerLink="/pages/ChambresDetail/{{ chambre.id }}"></button>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</div>

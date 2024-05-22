@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="image-container">
+    <img src="/assets/images/produit.jpg" class="background-image">
+    <div class="table-wrapper">
+      <table>
+        <tr>
+          <th>Produit</th>
+          <th>Stock</th>
+
+          <th>Produit Utilisés</th>
+        </tr>
+        <tr>
+          <td>Gel Douche</td>
+          <td><p>{{magasin?.nbrGelDouche}}</p></td>
+          <td><p>{{ quantitesProduits[1] }}</p></td>
+        </tr>
+        <tr>
+          <td>Shampoing</td>
+          <td><p>{{magasin?.nbrShampoing}}</p></td>
+          <td><p>{{ quantitesProduits[0] }}</p></td>
+        </tr>
+        <tr>
+          <td>Papier</td>
+          <td><p>{{magasin?.nbrPapier}}</p></td>
+          <td><p>{{ quantitesProduits[2] }}</p></td>
+        </tr>
+        <tr>
+          <td>ProduitMachine</td>
+          <td><p>{{magasin?.nbrProduitMachine}}</p></td>
+          <td><p>{{ quantitesProduits[5] }}</p></td>
+        </tr>
+        <tr>
+          <td>Produit de Sol</td>
+          <td><p>{{magasin?.nbrProduitSol}}</p></td>
+          <td><p>{{ quantitesProduits[4] }}</p></td>
+        </tr>
+      </table>
+    </div>
+    <button nbButton (click)="updateStock()" class="button-inside-image">Mettre à jour le stock du magasin</button>
+  </div>
+</div>

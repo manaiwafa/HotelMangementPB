@@ -1,0 +1,30 @@
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: 1rem;
+}
+
+
+
+.grid-item p {
+  margin: 0.5rem 0;
+  color: black;
+}
+
+
+  .luxe{
+    color: black;
+  }
+  label{
+    color: black;
+  }
+  h1{
+    text-align: center;
+   color: rgb(215, 25, 114);
+    font-style: italic;
+
+  }
+  h5{
+    color:mix(  #d8a9cb , #ffffff)!important;
+    font-style: italic;}

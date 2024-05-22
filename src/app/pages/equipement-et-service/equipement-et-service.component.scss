@@ -1,0 +1,39 @@
+img {
+  width: 100%; /* Pour que l'image prenne toute la largeur de la page */
+  height: 43vh; /* Pour que la hauteur soit de 28% de la hauteur de la fenêtre visible (viewport height) */
+}
+
+.service-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+h2,h3{
+  color: #b60e5a;
+}
+
+.service-row {
+  display: grid; /* Utiliser une grille pour organiser les éléments */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Organiser les éléments en fonction de la taille du conteneur */
+  gap: 20px; /* Espacement entre les éléments */
+}
+
+.service-item {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: rgba(245, 232, 232, 0.8);
+}
+
+
+.service-item h3 {
+  margin-top: 0;
+}
+
+.service-item p {
+  margin: 0;
+}
+
+.service-item ul {
+  padding-left: 20px;
+}

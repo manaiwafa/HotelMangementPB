@@ -1,0 +1,110 @@
+<nb-card>
+  <nb-card-header><h3>Ajouter Reservation</h3></nb-card-header>
+  <nb-card-body>
+    <div>
+      <form [formGroup]="ReservationForm" (ngSubmit)="onSubmit()">
+
+        <div class="row">
+          <div class="form-group col-6">
+            <label for="nom" class="label">Nom</label>
+            <input formControlName="nom" type="text" nbInput fullWidth class="form-control " placeholder="Nom">
+            <div *ngIf="ReservationForm.get('nom').invalid && ReservationForm.get('nom').touched">
+              <span *ngIf="ReservationForm.get('nom').errors?.required" class="text-danger">Nom requis</span>
+            </div>
+          </div>
+          <div class="form-group col-6">
+            <label for="prenom" class="label">Prenom</label>
+            <input formControlName="prenom" nbInput fullWidth type="text" class="form-control" placeholder="Prenom">
+            <div *ngIf="ReservationForm.get('prenom').invalid && ReservationForm.get('prenom').touched">
+              <span *ngIf="ReservationForm.get('prenom').errors?.required" class="text-danger">Prenom requis</span>
+            </div>
+          </div>
+          <div class="form-group col-6">
+            <label for="cin" class="label">CIN</label>
+            <input formControlName="cin" nbInput fullWidth type="text" class="form-control" placeholder="CIN">
+            <div *ngIf="ReservationForm.get('cin').invalid && ReservationForm.get('cin').touched">
+              <span *ngIf="ReservationForm.get('cin').errors?.required" class="text-danger">CIN requis</span>
+            </div>
+          </div>
+          <div class="form-group col-6">
+            <label for="telephone" class="label">Telephone</label>
+            <input formControlName="telephone" nbInput fullWidth type="text" class="form-control" placeholder="Telephone">
+            <div *ngIf="ReservationForm.get('telephone').invalid && ReservationForm.get('telephone').touched">
+              <span *ngIf="ReservationForm.get('telephone').errors?.required" class="text-danger">Telephone requis</span>
+            </div>
+          </div>
+          <div class="form-group col-6">
+            <label for="email" class="label">Email</label>
+            <input formControlName="email" type="email" nbInput fullWidth class="form-control " placeholder="Email">
+            <div *ngIf="ReservationForm.get('email').invalid && ReservationForm.get('email').touched">
+              <span *ngIf="ReservationForm.get('email').errors?.required" class="text-danger">Email requis</span>
+            </div>
+          </div>
+          <div class="form-group col-6">
+            <label for="dateArrivee" class="label">Date d'arrivée</label>
+            <input formControlName="dateArrivee" nbInput fullWidth type="date" class="form-control" placeholder="Date d'arrivée">
+            <div *ngIf="ReservationForm.get('dateArrivee').invalid && ReservationForm.get('dateArrivee').touched">
+              <span *ngIf="ReservationForm.get('dateArrivee').errors?.required" class="text-danger">Date d'arrivée requise</span>
+            </div>
+          </div>
+          <div class="form-group col-6">
+            <label for="dateDepart" class="label">Date de départ</label>
+            <input formControlName="dateDepart" nbInput fullWidth type="date" class="form-control" placeholder="Date de départ">
+            <div *ngIf="ReservationForm.get('dateDepart').invalid && ReservationForm.get('dateDepart').touched">
+              <span *ngIf="ReservationForm.get('dateDepart').errors?.required" class="text-danger">Date de départ requise</span>
+            </div>
+          </div>
+          <div class="form-group col-6">
+            <label for="nombreClients" class="label">Nombre de clients</label>
+            <input formControlName="nombreClients" nbInput fullWidth type="number" class="form-control" placeholder="Nombre de clients">
+            <div *ngIf="ReservationForm.get('nombreClients').invalid && ReservationForm.get('nombreClients').touched">
+              <span *ngIf="ReservationForm.get('nombreClients').errors?.required" class="text-danger">Nombre de clients requis</span>
+            </div>
+          </div>
+          <div class="form-group col-6">
+            <label for="vue" class="label">Vue</label>
+            <select formControlName="vue" nbInput fullWidth class="form-control" placeholder="vue">
+            <option value="">Choisisser une vue</option>
+            <option value="vue sur la mer">vue sur la mer</option>
+            <option value="vue sur la piscine">vue sur la piscine</option>
+            <option value="normal">vue normale</option></select>
+              <div *ngIf="ReservationForm.get('vue').invalid && ReservationForm.get('vue').touched">
+              <span *ngIf="ReservationForm.get('vue').errors?.required" class="text-danger">Vue requise</span>
+            </div>
+          </div>
+          <div class="form-group col-6">
+            <label for="type" class="label">Type de chambre</label>
+            <select formControlName="type" nbInput fullWidth class="form-control">
+              <option value="">Choisissez un type</option>
+              <option value="double">Double</option>
+              <option value="simple">Simple</option>
+              <option value="triple">Triple</option>
+            </select>
+            <div *ngIf="ReservationForm.get('type').invalid && ReservationForm.get('type').touched">
+              <span *ngIf="ReservationForm.get('type').errors?.required" class="text-danger">Type de chambre requis</span>
+            </div>
+          </div>
+          <div class="form-group col-6">
+            <label for="repas" class="label">repas</label>
+            <select formControlName="repas" nbInput fullWidth class="form-control">
+              <option value="">Choisissez un repas</option>
+              <option value="allInclusive">Tout inclusif</option>
+              <option value="demiPension">Demi-pension</option>
+              <option value="petitDej">Petit-déjeuner</option>
+              <option value="pensionComplete">Pension complète</option>
+            </select>
+            <div *ngIf="ReservationForm.get('repas').invalid && ReservationForm.get('repas').touched">
+              <span *ngIf="ReservationForm.get('repas').errors?.required" class="text-danger">repas requis</span>
+            </div>
+
+          </div></div>
+
+
+
+          <button type="submit" nbButton fullWidth status="success" size="large" >{{id ? "Modifier" : "Ajouter"}}</button>
+        </form>
+      </div>
+    </nb-card-body>
+  </nb-card>
+
+

@@ -1,0 +1,35 @@
+<nb-card>
+  <nb-card-header>
+    <h3>Ajouter un service</h3>
+  </nb-card-header>
+  <nb-card-body>
+    <div>
+      <form [formGroup]="serviceForm" (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+          <label for="service" class="label">Service *</label>
+          <input formControlName="service" type="text" nbInput fullWidth class="form-control" placeholder="Service">
+          <div *ngIf="serviceForm.get('service').invalid && serviceForm.get('service').touched">
+            <span *ngIf="serviceForm.get('service').errors?.required" class="text-danger">Service requis</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="description" class="label">Description</label>
+          <textarea formControlName="description" nbInput fullWidth class="form-control" placeholder="Description"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="gratuit" class="label">Gratuit</label>
+          <nb-checkbox formControlName="gratuit" class="form-control">Gratuit</nb-checkbox>
+        </div>
+        <div class="form-group">
+          <label for="noms" class="label">Noms</label>
+          <input formControlName="noms" type="text" nbInput fullWidth class="form-control" placeholder="Noms (séparés par des virgules)">
+        </div>
+
+        <button type="submit" nbButton fullWidth status="success" size="large">Ajouter</button>
+      </form>
+    </div>
+  </nb-card-body>
+</nb-card>

@@ -1,0 +1,34 @@
+<div class="table-container luxury-card">
+<nb-card>
+  <nb-card-header>Affectation Chambre a une reservation</nb-card-header>
+  <nb-card-body>
+    <nb-accordion multi>
+      <nb-accordion-item>
+       <nb-accordion-item-header>Reservation</nb-accordion-item-header>
+       <nb-accordion-item-body>
+        <h5>Nom</h5>  {{reservation?.nom}}
+        <h5>Prenom</h5>{{reservation?.prenom}}
+       </nb-accordion-item-body>
+      </nb-accordion-item>
+      <nb-accordion-item>
+        <nb-accordion-item-header>Chambres</nb-accordion-item-header>
+        <nb-accordion-item-body>
+          <div class="grid-container">
+            <ng-container *ngFor="let chambre of chambres">
+              <div class="grid-item">
+                <p>Numéro: {{ chambre.numero }}</p>
+                <p>Type: {{ chambre.type }}</p>
+                <p>Vue: {{ chambre.vue }}</p>
+                <p>À nettoyer: {{ chambre.nettoyer ? 'Oui' : 'Non' }}</p>
+                <button pButton pRipple icon="pi pi-check" class="p-button-rounded "  (click)="affectation(chambre)"></button>
+
+              </div>
+            </ng-container>
+          </div>
+        </nb-accordion-item-body>
+       </nb-accordion-item>
+     </nb-accordion>
+  </nb-card-body>
+</nb-card>
+</div>
+

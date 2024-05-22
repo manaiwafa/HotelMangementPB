@@ -1,0 +1,46 @@
+<h2>Summary</h2>
+<div class="mt-4">
+  <div class="ms-5">
+      <i class="fa fa-check-circle fa-5x" style="color: green;"></i>
+  </div>
+  <p class="mb-4">summary</p>
+  <div *ngIf="inscriptionRequest?.hotel">
+    <h6>
+
+        Bienvenue à l'Hôtelier Connect, la toute nouvelle plateforme qui vous ouvre les portes
+        vers une myriade d'établissements uniques à travers le monde.
+        Aujourd'hui, nous sommes fiers d'accueillir un nouvel ajout à notre famille d'hôtels : {{inscriptionRequest.hotel.nom}},
+         situé au cœur de la ville animée de{{inscriptionRequest.hotel.emplacementVille}}..
+Avec ses {{inscriptionRequest.hotel.nombreChambres}} chambres élégantes.
+Bienvenue chez nous, où le confort de manipulation de l'application et la variété des fonctionnalités vous attendent</h6>
+    <!--ul>
+      <li>Nom: {{inscriptionRequest.hotel.nom}}</li>
+      <li>Nombre Chambres: {{inscriptionRequest.hotel.nombreChambres}}</li>
+      <li>Emplacement Ville: {{inscriptionRequest.hotel.emplacementVille}}</li>
+      <li>NombrePiscines: {{inscriptionRequest.hotel.nombrePiscines}}</li>
+      <li>NombreTerrains: {{inscriptionRequest.hotel.nombreTerrains}}</li>
+      <li>Parking: {{inscriptionRequest.hotel.parking}}</li>
+      <li>Resto: {{inscriptionRequest.hotel.resto}}</li>
+      <li>Coinde coffe: {{inscriptionRequest.hotel.coindecoffe}}</li>
+    </ul>
+  </div>
+  <!--div *ngIf="inscriptionRequest?.Utilisateur">
+    <h6>utilisateur</h6>
+    <ul>
+      <li>nom: {{inscriptionRequest.utilisateur.nom}}</li>
+      <li>Nombre Chambres: {{inscriptionRequest.utilisateur.cin}}</li>
+      <li>Emplacement Ville: {{inscriptionRequest.utilisateur.codeHotel}}</li>
+      <li>NombrePiscines: {{inscriptionRequest.utilisateur.email}}</li>
+      <li>NombreTerrains: {{inscriptionRequest.utilisateur.prenom}}</li>
+      <li>Parking: {{inscriptionRequest.utilisateur.motDePasse}}</li>
+      <li>Resto: {{inscriptionRequest.utilisateur.codeHotel}}</li>
+      <li>Coinde coffe: {{inscriptionRequest.utilisateur.dateNaissance}}</li>
+    </ul>
+  </div!-->
+
+</div>
+<div class="d-flex justify-content-end flex-row mb-5 mt-4">
+  <button class="btn btn-outline-primary" (click)="onSubmit()">
+      finish <i class="fa fa-angle-right"></i>
+  </button>
+</div>

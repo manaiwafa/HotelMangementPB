@@ -1,0 +1,41 @@
+.luxury-card {
+  background: mix( #cfc5f4, #aad5f1); /* Arrière-plan dégradé */
+  color: white; /* Couleur du texte */
+  border-radius: 1rem; /* Arrondi des coins */
+  border: 2px solid #1e3c72; /* Bordure */
+  box-shadow: 0px 0px 20px 0px rgba(4, 4, 4, 0.75); /* Ombre */
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  gap: 1.5rem;
+}
+
+.grid-item {
+  background: mix( #e7c2f5, #3a7399); /* Arrière-plan dégradé */
+  padding: 1.5rem;
+  border-radius: 1rem; /* Arrondi des coins */
+  border: 2px solid #29465b; /* Bordure */
+}
+
+.grid-item p {
+  margin: 1rem 0;
+  color: black;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  background: mix( #ecebf1, #dde8f0);
+  border-color: black;/* Bouton aligné à droite */
+}
+
+.p-button-rounded {
+  background: mix(#781858  , #ffffff); /* Couleur de fond du bouton */
+  border-color: #c5aacb !important; /* Couleur de la bordure du bouton */
+}
+img{
+  width: 1800px;
+   height: 300px;
+}

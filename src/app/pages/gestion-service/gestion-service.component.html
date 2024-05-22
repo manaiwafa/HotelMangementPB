@@ -1,0 +1,21 @@
+
+<H1>Votre hôtel compte sur vous</H1>
+
+<div class="grid-container">
+  <ng-container *ngFor="let employe of employe">
+    <div class="grid-item">
+      <!-- Image -->
+      <img src="/assets/images/LL.jpg" class="background-image">
+
+    <div class="femme-info">
+      <p>Nom: {{employe.nom }}</p>
+      <p>Prenom: {{ employe.prenom }}</p>
+       <div class="button-container">
+        <button pButton pRipple icon="pi pi-check" class="p-button-rounded p-button-warningr-2"  routerLink="/pages/ChambresNettoyage/{{employe.id}}"></button>
+      </div>
+    </div>
+  </div>
+</ng-container>
+</div>
+
+

@@ -1,0 +1,43 @@
+<h2>Création Utilisateur</h2>
+<div>
+  <form [formGroup]="compteForm" (ngSubmit)="onSubmit()">
+
+    <div class="row">
+      <div class="form-group col-6">
+        <label class="label">Nom</label>
+        <input formControlName="nom" type="text" nbInput fullWidth class="form-control " placeholder="username">
+      </div>
+      <div class="form-group col-6">
+        <label class="label">Prenom</label>
+        <input formControlName="prenom" nbInput fullWidth type="text" class="form-control" placeholder="name">
+      </div>
+      <div class="form-group col-6">
+        <label class="label">CIN</label>
+        <input formControlName="cin" nbInput fullWidth type="number" class="form-control" placeholder="cin">
+      </div>
+      <div class="form-group col-6">
+        <label class="label">Telephone</label>
+        <input formControlName="telephone" nbInput fullWidth type="text" class="form-control" placeholder="phone">
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-6">
+        <label class="label">E-Mail</label>
+        <input formControlName="email" nbInput fullWidth type="email" class="form-control" placeholder="email">
+      </div>
+      <div class="form-group col-6">
+        <label class="label">Date de Naissance </label>
+        <input nbInput formControlName="dateNaissance" placeholder="Form Picker" fullWidth
+         [nbDatepicker]="formpicker">
+        <nb-datepicker #formpicker></nb-datepicker>
+      </div>
+      <div class="form-group col-6">
+        <label class="label">Mot De Passe</label>
+        <input formControlName="motDePasse" nbInput fullWidth type="password" class="form-control"
+          placeholder=" password">
+      </div>
+    </div>
+    <button type="submit" nbButton fullWidth status="success" size="large">Go to finish</button>
+  </form>
+
+</div>

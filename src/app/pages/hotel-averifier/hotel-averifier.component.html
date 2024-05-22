@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotels</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  </head>
+<body>
+    <div class="grid-container">
+        <ng-container *ngFor="let hotel of hotels">
+            <div class="grid-item">
+                <div class="hotel-info"><i class="fas fa-home"></i>
+                  Nom d'hotel: {{ hotel.nom }}</div>
+                <div class="hotel-info"><i class="fa fa-bed mr-3"></i>Nombre de chambres: {{ hotel.nombreChambres }}</div>
+                <div class="hotel-info"><i class="fa fa-city"></i>Emplacement: {{ hotel.emplacementVille }}</div>
+                <div class="hotel-info"><i class="fas fa-swimming-pool"></i>Nombre de piscines: {{ hotel.nombrePiscines }}</div>
+                <div class="hotel-info"><i class="fa fa_futbol" ></i>Nombre de terrains: {{ hotel.nombreTerrains }}</div>
+                <div class="hotel-info"><i class="fas fa-parking"></i>Parking: {{ hotel.parking }}</div>
+                <div class="hotel-info"><i class="fas fa-utensils"></i>Resto: {{ hotel.resto }}</div>
+                <div class="hotel-info"><i class="fas fa-coffee"></i>Coin de café: {{ hotel.coindecoffe }}</div>
+                <div class="hotel-info"><i class="fas fa-theater-masks"></i>Activites et animations: {{ hotel.activiteetanimation }}</div>
+                <td>
+                  <p-button label="Accepter" styleClass="p-button-rounded p-button-help"  (click)="activatHotel(hotel.id)"></p-button>
+                </td>
+              </div>
+        </ng-container>
+    </div>
+</body>
+</html>
+

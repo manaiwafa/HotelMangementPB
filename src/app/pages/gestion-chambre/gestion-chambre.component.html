@@ -1,0 +1,55 @@
+ <div class="button-container"> <button pButton pRipple label="New" icon="pi pi-plus" class="p-button-success mr-2" routerLink="/pages/ajouterChambre"  ></button>
+ </div>
+ <div class="table-container luxury-card">
+
+<p-table [value]="chambres"class="custom-table" [paginator]="true" [rows]="6">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Number</th>
+      <th>Floor</th>
+      <th>Vue</th>
+      <th>Type</th>
+      <th>Reserved</th>
+      <th>Nettoyer</th>
+      <th>Prix</th>
+<th></th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-chambre let-i="rowIndex">
+    <tr [class]="rowIndex % 2 === 0 ? 'even-row' : 'odd-row'"></tr>
+    <tr>
+      <td>{{ chambre.numero }}</td>
+      <td>{{ chambre.etage }}</td>
+      <td>{{ chambre.vue }}</td>
+      <td>{{ chambre.type }}</td>
+      <td>{{ chambre.reserver  }}</td>
+      <td>{{ chambre.nettoyer  }}</td>
+      <td>{{ chambre.prix }}</td>
+      <td>
+        <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded  mr-2" routerLink="/pages/modifierChambre/{{chambre.id}}"></button>
+        <p-button icon="pi pi-times" styleClass="p-button-rounded p-button-danger" (click)="deleteRoom(chambre.id)"></p-button>
+       </td>
+    </tr>
+  </ng-template>
+</p-table>
+
+
+
+  <!-- <ng-container *ngFor="let chambre of chambres">
+    <div class="grid-item">
+      <p>Number: {{ chambre.numero }}</p>
+      <p>Floor: {{ chambre.etage }}</p>
+      <p>Vue: {{ chambre.vue }}</p>
+      <p>Type: {{ chambre.type }}</p>
+      <p>Reserved: {{ chambre.reserver }}</p>
+      <p>Nettoyer: {{ chambre.nettoyer }}</p>
+      <p>Prix: {{ chambre.prix }}</p>
+
+      <div class="button-container">
+        <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-warning mr-2" routerLink="/pages/modifierChambre/{{ chambre.id }}"></button>
+        <p-button icon="pi pi-times" styleClass="p-button-rounded p-button-danger" (click)="deleteRoom(chambre.id)"></p-button>
+      </div>
+    </div>
+  </ng-container>
+</div> -->
+

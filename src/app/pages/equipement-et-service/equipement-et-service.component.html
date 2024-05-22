@@ -1,0 +1,33 @@
+<div class="services-container">
+  <div class="button-container">
+    <button pButton pRipple label="New" icon="pi pi-plus" class="p-button-sucess mr-2"
+      routerLink="/pages/AjouterService"></button>
+  </div>
+  <img src="/assets/images/sonette.jpeg" >
+
+  <h2>Liste des services Generales </h2>
+
+  <div class="service-item" *ngFor="let service of services">
+    <h3>{{ service.service }}</h3>
+    <p>{{ service.description }}</p>
+    <p *ngIf="service.gratuit">Gratuit</p>
+    <p *ngIf="!service.gratuit">Payant</p>
+    <ul>
+      <li *ngFor="let nom of service.noms">{{ nom }}</li>
+    </ul>
+  </div>
+</div>
+<div class="services-container">
+  <h2>Liste des services d'hotel </h2>
+
+  <div class="service-item" *ngFor="let service of servicces">
+    <h3>{{ service.service }}</h3>
+
+    <p>{{ service.description }}</p>
+    <p *ngIf="service.gratuit">Gratuit</p>
+    <p *ngIf="!service.gratuit">Payant</p>
+    <ul>
+      <li *ngFor="let nom of service.noms">{{ nom }}</li>
+    </ul>
+  </div>
+</div>

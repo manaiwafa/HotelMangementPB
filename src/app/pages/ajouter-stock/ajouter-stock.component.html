@@ -1,0 +1,57 @@
+<div class="table-container">
+  <div class="image-container" class="background-color">
+
+    <div class="table-wrapper">
+<table>
+  <tr>
+    <td>
+      <label for="nbrGelDouche">Quantité Gel Douche :</label>
+    </td>
+    <td>
+      <input type="number" id="nbrGelDouche" #gelDoucheInput>
+    </td>
+    <td>
+<img src="/assets/images/gel.jpg">    </td>
+  </tr>
+  <tr>
+    <td>
+      <label for="nbrShampoing">Quantité Shampoing :</label>
+    </td>
+    <td>
+      <input type="number" id="nbrShampoing" #shampoingInput>
+    </td>
+    <td>
+      <img src="/assets/images/shampoingg.jpeg">    </td>
+  </tr>
+  <tr>
+    <td>
+      <label for="nbrPapier">Quantité Papier :</label>
+    </td>
+    <td>
+      <input type="number" id="nbrPapier" #papierInput>
+    </td>
+    <td>
+      <img src="/assets/images/papier.jpg">    </td>
+  </tr>
+  <tr>
+    <td>
+      <label for="nbrProduitMachine">Quantité Produit Machine :</label>
+    </td>
+    <td>
+      <input type="number" id="nbrProduitMachine" #produitMachineInput>
+    </td>
+    <td>
+      <img src="/assets/images/machine.jpg">    </td>
+  </tr>
+  <tr>
+    <td>
+      <label for="nbrProduitSol">Quantité Produit Sol :</label>
+    </td>
+    <td>
+      <input type="number" id="nbrProduitSol" #produitSolInput>
+    </td><td>
+      <img src="/assets/images/sol.jpg">    </td>
+  </tr>
+</table></div></div>
+<button (click)="ajouterStock(gelDoucheInput.value, shampoingInput.value, papierInput.value, produitMachineInput.value, produitSolInput.value)">Ajouter au stock</button>
+</div>

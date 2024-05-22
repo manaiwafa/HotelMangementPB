@@ -1,0 +1,54 @@
+
+<div class="button-container">
+  <button pButton pRipple label="New" icon="pi pi-plus" class="p-button-success mr-2"
+    routerLink="/pages/ajouterReservation"></button>
+</div>
+
+<div class="table-container luxury-card">
+  <p-table [value]="Reservation" class="custom-table" [paginator]="true" [rows]="6">
+    <!-- Table headers -->
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Date Arrivee</th>
+        <th>Date Depart</th>
+        <th>Nombre Clients</th>
+        <th>Vue</th>
+        <th>Type Chambre</th>
+        <th>Repas</th>
+        <th>Nom </th>
+        <th>Prénom</th>
+        <th>CIN</th>
+        <th>Téléphone</th>
+        <th>Email</th>
+        <th>status</th>
+        <th></th>
+      </tr>
+    </ng-template>
+    <!-- Table body -->
+    <ng-template pTemplate="body" let-reservation let-i="rowIndex">
+      <tr [class]="rowIndex % 2 === 0 ? 'even-row' : 'odd-row'">
+        <td>{{ reservation.dateArrivee }}</td>
+        <td>{{ reservation.dateDepart}}</td>
+        <td>{{ reservation.nombreClients }}</td>
+        <td>{{ reservation.vue}}</td>
+        <td>{{ reservation.type}}</td>
+        <td>{{ reservation.repas}}</td>
+        <td>{{ reservation.nom}}</td>
+        <td>{{reservation.prenom }}</td>
+        <td>{{ reservation.cin }}</td>
+        <td>{{ reservation.telephone }}</td>
+        <td>{{ reservation.email }}</td>
+        <td><p-tag [value]="reservation.status" [severity]="getSeverity(reservation.status)"></p-tag></td>
+        <td>
+          <button pButton pRipple icon="pi pi-pencil" *ngIf="!isCanceled(reservation.status)" class="p-button-rounded  mr-2"
+            routerLink="/pages/modifierReservation/{{reservation.id}}"></button>
+          <p-button icon="pi pi-check" styleClass="p-button-rounded p-button-success"
+            *ngIf="isInProgress(reservation.status)" (click)="acceptReservation(reservation.id)"></p-button>
+          <p-button icon="pi pi-times" styleClass="p-button-rounded p-button-danger"
+            *ngIf="isInProgress(reservation.status)" (click)="deleteReservation(reservation.id)"></p-button>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
+

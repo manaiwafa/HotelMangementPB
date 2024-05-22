@@ -1,0 +1,41 @@
+<h1 id="title" class="title">Login</h1>
+<p class="sub-title">Hello! Log in with your email.</p>
+
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+  <div class="form-control-group">
+    <label class="label">Email :</label>
+    <input formControlName="email" nbInput fullWidth type="email" placeholder="Email">
+    <div *ngIf="loginForm.get('email').invalid && (loginForm.get('email').dirty || loginForm.get('email').touched)">
+      <p class="caption status-danger">Please provide a valid email.</p>
+    </div>
+  </div>
+  <div class="form-control-group">
+    <label class="label">Password :</label>
+    <input formControlName="password" nbInput fullWidth type="password" placeholder="password">
+    <div *ngIf="loginForm.get('password').invalid && (loginForm.get('password').dirty || loginForm.get('password').touched)">
+      <p class="caption status-danger">Please provide your password.</p>
+    </div>
+  </div>
+  <!-- <div class="form-group">
+    <label class="label">Hotel :</label>
+    <nb-select fullWidth formControlName="codeHotel">
+      <nb-option *ngFor="let hotel of hotels" [value]="hotel.nom">{{hotel.nom}}</nb-option>
+    </nb-select>
+    <div *ngIf="loginForm.get('codeHotel').invalid && (loginForm.get('codeHotel').dirty || loginForm.get('codeHotel').touched)">
+      <p class="caption status-danger">Please select your hotel.</p>
+    </div>
+  </div> -->
+  <div class="form-group">
+    <label class="label">Hotel :</label>
+    <nb-select fullWidth formControlName="codeHotel" >
+      <nb-option [value]="">Select Hotel</nb-option>
+      <nb-option *ngFor="let hotel of hotels" [value]="hotel.nom">{{hotel.nom}}</nb-option>
+    </nb-select>
+    <div *ngIf="loginForm.get('codeHotel').invalid && (loginForm.get('codeHotel').dirty || loginForm.get('codeHotel').touched)">
+      <p class="caption status-danger">Please select your hotel.</p>
+    </div>
+  </div>
+
+  <button type="submit" nbButton fullWidth status="success" size="large">LOG IN</button>
+</form>

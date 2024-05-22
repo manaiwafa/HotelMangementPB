@@ -1,0 +1,56 @@
+<!--banner-slider-->
+<!-- main-slider -->
+<section class="w3l-main-slider" id="home">
+    <div class="banner-content">
+
+            <ng-template pTemplate="item" let-item>
+                <img [src]="item.image" style="width: 100%; display: block;" />
+                <div style="position: absolute;">
+                    <div class="demo-inner-content">
+                        <div class="container">
+                            <div class="banner-infhny">
+                                <h3>You don't need to go far to find what matters.</h3>
+                                <h6 class="mb-3">Discover your next adventure</h6>
+                                <div class="flex-wrap search-wthree-field mt-md-5 mt-4">
+                                    <form [formGroup]="searchForm" (ngSubmit)="onSubmit()" class="booking-form">
+                                        <div class="row book-form">
+                                            <div class="form-input col-md-3 mt-md-0 mt-3">
+
+                                                <select formControlName="destination" name="selectpicker"
+                                                    class="selectpicker">
+                                                    <option value="">Destinaion</option>
+                                                    <option *ngFor="let region of regions" [value]="region.id">{{region.ville}}, {{region.pays}}</option>
+                                                </select>
+
+                                            </div>
+                                            <div class="form-input col-md-3 mt-md-0 mt-3">
+                                                <input nbInput formControlName="period" placeholder="JJ/MM/YYYY"
+                                                    [nbDatepicker]="formpicker">
+                                                <nb-rangepicker #formpicker></nb-rangepicker>
+                                            </div>
+                                            <div class="form-input col-md-3 mt-md-0 mt-3" >
+                                                <p-overlayPanel #op>
+                                                    <ngx-search-room (roomEmitter)="roomEmitter($event)"></ngx-search-room>
+                                                </p-overlayPanel>
+
+                                                <button (click)="op.toggle($event)" style="padding: 0px 55px;" class="btn btn-style btn-secondary"
+                                                    type="button"><span
+                                                        class="fa fa-bed mr-3"></span>Chambres</button>
+                                            </div>
+                                            <div class="bottom-btn col-md-3 mt-md-0 mt-3">
+                                                <button class="btn btn-style btn-secondary" type="submit"><span
+                                                        class="fa fa-search mr-3" aria-hidden="true"></span> Search</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+       
+    </div>
+</section>
+<!-- /main-slider -->
+<!-- //banner-slider-->

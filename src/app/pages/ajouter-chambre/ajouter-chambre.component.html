@@ -1,0 +1,69 @@
+<nb-card>
+  <nb-card-header><h3> Chambre</h3></nb-card-header>
+  <nb-card-body>
+    <div>
+      <form [formGroup]="chambreForm" (ngSubmit)="onSubmit()">
+
+        <div class="row">
+          <div class="form-group col-6">
+            <label for="Number" class="label">Numéro</label>
+            <input formControlName="numero" type="text" nbInput fullWidth class="form-control " placeholder="Numéro">
+            <div *ngIf="chambreForm.get('numero').invalid && chambreForm.get('numero').touched">
+              <span *ngIf="chambreForm.get('numero').errors?.required" class="text-danger">Numéro requis</span>
+            </div>
+          </div>
+          <div class="form-group col-6">
+            <label for="Floor" class="label">Étage</label>
+            <input formControlName="etage" nbInput fullWidth type="text" class="form-control" placeholder="Étage">
+            <div *ngIf="chambreForm.get('etage').invalid && chambreForm.get('etage').touched">
+              <span *ngIf="chambreForm.get('etage').errors?.required" class="text-danger">Étage requis</span>
+            </div>
+          </div>
+
+          <div class="form-group col-6">
+            <label for="Vue" class="label">Vue</label>
+            <select formControlName="vue" nbInput fullWidth class="form-control">
+              <option value="">Choisissez une vue</option>
+              <option value="vue sur la mer">Vue sur la mer</option>
+              <option value="vue sur la piscine">Vue sur la piscine</option>
+              <option value="normal">Vue normale</option>
+            </select>
+            <div *ngIf="chambreForm.get('vue').invalid && chambreForm.get('vue').touched">
+              <span *ngIf="chambreForm.get('vue').errors?.required" class="text-danger">Vue requise</span>
+            </div>
+          </div>
+          <div class="form-group col-6">
+            <label for="type" class="label">Type</label>
+            <select formControlName="type" nbInput fullWidth class="form-control">
+              <option value="">Choisissez un type</option>
+              <option value="double">Double</option>
+              <option value="simple">Simple</option>
+              <option value="triple">Triple</option>
+            </select>
+            <div *ngIf="chambreForm.get('type').invalid && chambreForm.get('type').touched">
+              <span *ngIf="chambreForm.get('type').errors?.required" class="text-danger">Type requis</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="form-group col-6">
+            <label class="label">
+              <input type="checkbox" formControlName="reserver"> Réservé
+            </label>
+          </div>
+          <div class="form-group col-6">
+            <label class="label">
+              <input type="checkbox" formControlName="nettoyer"> Nettoyé
+            </label>
+          </div>
+        </div>
+
+       
+
+        <button type="submit" nbButton fullWidth status="success"  size="large" >{{id ? "Modifier" : "Ajouter"}}</button>
+      </form>
+    </div>
+  </nb-card-body>
+</nb-card>
+

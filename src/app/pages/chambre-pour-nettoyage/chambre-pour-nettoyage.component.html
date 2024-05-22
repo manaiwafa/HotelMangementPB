@@ -1,0 +1,40 @@
+
+<nb-card>
+  <nb-card-header> <h1>Affectation Des FemmeDeMenage </h1></nb-card-header>
+  <nb-card-body>
+    <nb-accordion multi>
+      <nb-accordion-item>
+       <nb-accordion-item-header>NomFemmeDeMenage</nb-accordion-item-header>
+       <nb-accordion-item-body>
+        <h5>Nom</h5> {{employe?.nom}}
+        <h5>Prenom</h5>{{employe.prenom}}
+       </nb-accordion-item-body>
+      </nb-accordion-item>
+      <nb-accordion-item>
+        <nb-accordion-item-header>Chambres</nb-accordion-item-header>
+        <nb-accordion-item-body>
+          <div class="grid-container">
+            <ng-container *ngFor="let chambre of chambres">
+              <div class="grid-item">
+                <p>Numéro: {{ chambre.numero }}</p>
+                <p>Type: {{ chambre.type }}</p>
+                <p>Vue: {{ chambre.vue }}</p>
+                <p>nettoyer: {{ chambre.nettoyerr }}</p>
+
+                <nb-checkbox  status="select"  (checkedChange)="affectation(chambre, $event)">Select</nb-checkbox>
+                <!-- <button pButton pRipple icon="pi pi-check" class="p-button-rounded "  (click)="affectation(chambre)"></button> -->
+
+              </div>
+            </ng-container>
+          </div>
+        </nb-accordion-item-body>
+       </nb-accordion-item>
+     </nb-accordion>
+     <button type="button" nbButton fullWidth  size="large" (click)="save()" style="color: rgb(215, 25, 114);;">Affectation</button>
+     <button type="button" nbButton fullWidth  size="large" (click)="modifier()" style="color: rgb(215, 25, 114);;">modifierr</button>
+
+    </nb-card-body>
+</nb-card>
+
+
+

@@ -1,0 +1,65 @@
+<h2  >Création Hotel</h2>
+<div>
+  <form [formGroup]="HotelForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+
+
+      <div class="form-group col-6">
+        <label class="label">Nom</label>
+        <input formControlName="nom" type="text" nbInput fullWidth placeholder="Name">
+      </div>
+      <div class="form-group col-6">
+        <label class="label">Nombre de chambres</label>
+        <input formControlName="nombreChambres" type="text" nbInput fullWidth placeholder="nombreChambres">
+      </div>
+
+      <div class="form-group col-6">
+        <label class="label">Ville</label>
+        <nb-select fullWidth formControlName="emplacementVille">
+          <nb-option value="Sousse">sousse</nb-option>
+          <nb-option value="nabeul">nabeul </nb-option>
+          <nb-option value="hammamet">hammamet</nb-option>
+          <nb-option value="mehdia">mehdia</nb-option>
+          <nb-option value="Beja">Beja</nb-option>
+          <nb-option value="Kefe">keff</nb-option>
+          <nb-option value="Djerba">Djerba</nb-option>
+        </nb-select>
+      </div>
+      <div class="form-group col-6">
+        <label class="label">Description</label>
+        <input formControlName="description" type="text" nbInput fullWidth placeholder="Description">
+      </div>
+
+      <div class="form-group col-6">
+        <label class="label">Nombre de piscine </label>
+        <input formControlName="nbrpiscine" type="number" nbInput fullWidth placeholder="Number of Pool">
+      </div>
+      <div class="form-group col-6">
+        <label class="label">Nombre De Terrains</label>
+        <input formControlName="nbrdeterrains" type="number" nbInput fullWidth placeholder="Sports Field">
+      </div>
+      <div class="form-group col-6">
+        <label class="label">Parking</label>
+        <input formControlName="parking" type="text" nbInput fullWidth placeholder="Parking">
+      </div>
+      <div class="form-group col-6">
+        <label class="label">Restaurant</label>
+        <input formControlName="resto" type="text" nbInput fullWidth placeholder="Restaurent">
+      </div>
+
+      <div class="form-group col-6">
+        <label class="label">Coin De Coffe</label>
+        <input formControlName="coindecoffe" type="text" nbInput fullWidth placeholder="Trunk Corner">
+      </div>
+
+      <div class="form-group col-6">
+        <label class="label">Activitée & Animation</label>
+        <input formControlName="activitéetanimation" type="text" nbInput fullWidth
+          placeholder="Activity & Entertainment">
+      </div>
+
+
+    </div>
+    <button type="submit" nbButton fullWidth status="success" size="large">Submit</button>
+  </form>
+</div>

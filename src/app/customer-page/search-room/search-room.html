@@ -1,0 +1,41 @@
+<form (ngSubmit)="onSubmit()" [formGroup]="roomForm" class="booking-form" >
+  <div formArrayName="rooms">
+      <div *ngFor="let fields of roomFormGroup.controls; let i = index">
+          <div style="display: flex;justify-content: space-between;">
+              <span style="color: #ff1654;">Chambre {{i+1}}</span>
+              <span (click)="removeRoom(i)" class="fa fa-trash  mr-3" aria-hidden="true"></span>
+
+          </div>
+          <div class="row" [formGroupName]="i">
+              <div class="form-input col-md-4 mt-md-0 mt-3">
+                  <div class="formGroup">
+                      <label>Adulte(s)</label>
+                  </div>
+                  <select formControlName="adulte"  name="selectpicker" style="border: 1px solid #abaaaa;">
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                  </select>
+              </div>
+              <div class="form-input col-md-4 mt-md-0 mt-3">
+                  <div class="formGroup">
+                      <label>Adulte(s)</label>
+                  </div>
+                  <select formControlName="enfant" name="selectpicker"  style="border: 1px solid #abaaaa;">
+                      <option value="0">0</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                  </select>
+                  <label>(2-11 ans)</label>
+              </div>
+              <div class="form-input col-md-4 mt-md-0 mt-3" >
+                  <div class="formGroup">
+                      <label>Enfant(s)</label>
+                  </div>
+
+
+      <button class="btn btn-style btn-secondary" type="submit">validate </button>
+  </div>
+</form>

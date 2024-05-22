@@ -1,0 +1,68 @@
+
+<nb-card>
+
+  <nb-card-header><h1>Details prix</h1></nb-card-header>
+  <nb-card-body>
+    <div>
+      <form [formGroup]="hotelForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+          <div class="form-group col-6">
+            <label for="prixAllInclusif" class="label">Prix All Inclusif</label>
+            <input formControlName="prixAllInclusif" type="number" nbInput fullWidth class="form-control" placeholder="Prix All Inclusif">
+          </div>
+          <div class="form-group col-6">
+            <label for="prixDemiPension" class="label">Prix Demi-Pension</label>
+            <input formControlName="prixDemiPension" type="number" nbInput fullWidth class="form-control" placeholder="Prix Demi-Pension">
+          </div>
+          <div class="form-group col-6">
+            <label for="prixPensionComplete" class="label">Prix Pension Complète</label>
+            <input formControlName="prixPensionComplete" type="number" nbInput fullWidth class="form-control" placeholder="Prix Pension Complète">
+            <!-- Validation -->
+          </div>
+          <div class="form-group col-6">
+            <label for="prixPetitDej" class="label">Prix Petit Déjeuner</label>
+            <input formControlName="prixPetitDej" type="number" nbInput fullWidth class="form-control" placeholder="Prix Petit Déjeuner">
+          </div>
+          <div class="form-group col-6">
+            <label for="typeDouble" class="label">Type Double</label>
+            <input formControlName="typeDouble" type="number" nbInput fullWidth class="form-control" placeholder="Type Double">
+          </div>
+          <div class="form-group col-6">
+            <label for="typeSuite" class="label">Type Suite</label>
+            <input formControlName="typeSuite" type="number" nbInput fullWidth class="form-control" placeholder="Type Suite">
+          </div>
+          <div class="form-group col-6">
+            <label for="typeTriple" class="label">Type Triple</label>
+            <input formControlName="typeTriple" type="number" nbInput fullWidth class="form-control" placeholder="Type Triple">
+          </div>
+          <div class="form-group col-6">
+            <label for="typleSingle" class="label">Type Single</label>
+            <input formControlName="typleSingle" type="number" nbInput fullWidth class="form-control" placeholder="Type Single">
+          </div>
+          <div class="form-group col-6">
+            <label for="prixPersonne" class="label">Prix Personne</label>
+            <input formControlName="prixPersonne" type="number" nbInput fullWidth class="form-control" placeholder="Prix Personne">
+          </div>
+          <div class="form-group col-6">
+            <label for="prixVueSurMer" class="label">Prix VueSurMer</label>
+            <input formControlName="prixVueSurMer" type="number" nbInput fullWidth class="form-control" placeholder="prixVueSurMer">
+          </div>
+          <div class="form-group col-6">
+            <label for="prixVueNormal" class="label">Prix VueNormal</label>
+            <input formControlName="prixVueNormal" type="number" nbInput fullWidth class="form-control" placeholder="Prix prixVueNormal">
+          </div>
+          <div class="form-group col-6">
+            <label for="prixVueMontagne" class="label">prixVueMontagne</label>
+            <input formControlName="prixVueMontagne" type="number" nbInput fullWidth class="form-control" placeholder="prixVueMontagne">
+          </div>
+          <div class="form-group col-6">
+            <label for="prixVuePiscine" class="label">prixVuePiscine</label>
+            <input formControlName="prixVuePiscine" type="number" nbInput fullWidth class="form-control" placeholder="prixVuePiscine">
+          </div>
+        </div>
+        <button type="submit" nbButton fullWidth size="large" >Modifier</button>
+      </form>
+    </div>
+
+  </nb-card-body>
+</nb-card>

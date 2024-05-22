@@ -1,0 +1,46 @@
+
+
+.container {
+  position: relative;
+
+}
+
+.background-image {
+  display: block;
+  width: 100%;
+  height: 80%;
+  padding: 0%;
+}
+
+table {
+  position: absolute;
+  top: 44%; /* Ajustez cette valeur pour placer le tableau verticalement */
+  left: 50%; /* Ajustez cette valeur pour placer le tableau horizontalement */
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.5); /* Fond semi-transparent pour le tableau */
+  padding: 1000px;
+  border-radius: 10px;
+  width: 65%;
+  height: 30%;
+}
+.button-inside-image {
+  position:absolute;
+  background-color: #a884ae;
+  bottom: 30%; /* Ajustez la position verticale du bouton */
+  left: 50%; /* Centrer le bouton horizontalement */
+  transform: translateX(-50%);
+
+
+}
+
+p,th, td {
+  font-weight: bold;
+  color: black;
+}
+th {
+  background-color: #ff6691; /* Couleur de fond des cellules d'en-tête en noir */
+  color: white; /* Couleur du texte en blanc pour une meilleure lisibilité */
+  padding: 0px; /* Ajouter du padding pour un meilleur espacement */
+}
+
+

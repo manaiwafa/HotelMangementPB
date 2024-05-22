@@ -1,0 +1,40 @@
+
+
+<div class="button-container">
+  <button pButton pRipple label="Ajouter un employé" icon="pi pi-plus" class="p-button-success mr-2" routerLink="/pages/ajouterEmploye"></button>
+</div>
+<div class="table-container luxury-card">
+  <p-table [value]="employe" class="custom-table" [paginator]="true" [rows]="10">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Nom</th>
+        <th>Prénom</th>
+        <th>CIN</th>
+        <th>Téléphone</th>
+        <th>Email</th>
+        <th>Date de Naissance</th>
+        <th>Rôle</th>
+        <th>Salaire</th>
+        <th>Type</th>
+        <th>Actions</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-employe let-rowIndex="rowIndex">
+      <tr [class]="rowIndex % 2 === 0 ? 'even-row' : 'odd-row'">
+        <td>{{ employe.nom }}</td>
+        <td>{{ employe.prenom }}</td>
+        <td>{{ employe.cin }}</td>
+        <td>{{ employe.telephone }}</td>
+        <td>{{ employe.email }}</td>
+        <td>{{ employe.dateNaissance }}</td>
+        <td>{{ employe.role }}</td>
+        <td>{{ employe.salaire }}</td>
+        <td>{{ employe.type }}</td>
+        <td>
+          <button pButton pRipple  class="p-button-rounded  mr-2" icon="pi pi-pencil"  routerLink="/pages/modifierEmploye/{{employe.id}}"></button>
+          <button pButton pRipple icon="pi pi-times"  class="p-button p-button-danger mr-2" (click)="deleteEmployer(employe.id)"></button>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

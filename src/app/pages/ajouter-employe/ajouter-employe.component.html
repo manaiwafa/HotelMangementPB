@@ -1,0 +1,88 @@
+<nb-card>
+  <nb-card-header>Gestion employe</nb-card-header>
+  <nb-card-body>
+    <div>
+      <form [formGroup]="EmployeForm" (ngSubmit)="onSubmit()">
+
+        <div class="row">
+          <div class="form-group col-6">
+            <label for="nom" class="label">Nom</label>
+            <input formControlName="nom" type="text" nbInput fullWidth class="form-control" placeholder="Nom">
+            <div *ngIf="EmployeForm.get('nom').invalid && EmployeForm.get('nom').touched">
+              <span class="text-danger" *ngIf="EmployeForm.get('nom').errors?.required">Nom requis</span>
+            </div>
+          </div>
+          <div class="form-group col-6">
+            <label for="prenom" class="label">Prenom</label>
+            <input formControlName="prenom" type="text" nbInput fullWidth class="form-control" placeholder="Prenom">
+            <div *ngIf="EmployeForm.get('prenom').invalid && EmployeForm.get('prenom').touched">
+              <span class="text-danger" *ngIf="EmployeForm.get('prenom').errors?.required">Prenom requis</span>
+            </div>
+          </div>
+          <div class="form-group col-6">
+            <label for="cin" class="label">CIN</label>
+            <input formControlName="cin" type="text" nbInput fullWidth class="form-control" placeholder="CIN">
+            <div *ngIf="EmployeForm.get('cin').invalid && EmployeForm.get('cin').touched">
+              <span class="text-danger" *ngIf="EmployeForm.get('cin').errors?.required">CIN requis</span>
+            </div>
+          </div>
+          <div class="form-group col-6">
+            <label for="salaire" class="label">Salaire</label>
+            <input formControlName="salaire" type="text" nbInput fullWidth class="form-control" placeholder="Salaire">
+            <div *ngIf="EmployeForm.get('salaire').invalid && EmployeForm.get('salaire').touched">
+              <span class="text-danger" *ngIf="EmployeForm.get('salaire').errors?.required">Salaire requis</span>
+            </div>
+          </div>
+          <div class="form-group col-6">
+            <label for="telephone" class="label">Téléphone</label>
+            <input formControlName="telephone" type="text" nbInput fullWidth class="form-control" placeholder="Téléphone">
+            <div *ngIf="EmployeForm.get('telephone').invalid && EmployeForm.get('telephone').touched">
+              <span class="text-danger" *ngIf="EmployeForm.get('telephone').errors?.required">Téléphone requis</span>
+            </div>
+          </div>
+          <div class="form-group col-6">
+            <label for="dateNaissance" class="label">Date de Naissance</label>
+            <input formControlName="dateNaissance" type="text" nbInput fullWidth class="form-control" placeholder="Date de Naissance">
+            <div *ngIf="EmployeForm.get('dateNaissance').invalid && EmployeForm.get('dateNaissance').touched">
+              <span class="text-danger" *ngIf="EmployeForm.get('dateNaissance').errors?.required">Date de Naissance requise</span>
+            </div>
+          </div>
+          <div class="form-group col-6">
+            <label for="motDePasse" class="label">Mot de Passe</label>
+            <input formControlName="motDePasse" type="password" nbInput fullWidth class="form-control" placeholder="Mot de Passe">
+            <div *ngIf="EmployeForm.get('motDePasse').invalid && EmployeForm.get('motDePasse').touched">
+              <span class="text-danger" *ngIf="EmployeForm.get('motDePasse').errors?.required">Mot de Passe requis</span>
+            </div>
+          </div>
+
+          <div class="form-group col-6">
+            <label for="role" class="label">Role</label>
+            <select formControlName="role" nbInput fullWidth class="form-control" placeholder="role">
+              <option value="">Sélectionnez un rôle</option>
+              <option value="Chef_chambre">Chef de chambre</option>
+              <option value="Réceptionniste">Réceptionniste</option>
+              <option value="Femme_menage">Femme de ménage</option>
+              <option value="Buindier">Buindier</option>
+              <option value="Magasinier">Magasinier</option>
+            </select>
+          
+            <div *ngIf="EmployeForm.get('role').invalid && EmployeForm.get('role').touched">
+              <span  *ngIf="EmployeForm.get('role').errors?.required" class="text-danger">Rôle requis</span>
+            </div>
+          </div>
+
+
+          <div class="form-group col-6">
+            <label for="email" class="label">Email</label>
+            <input formControlName="email" type="email" nbInput fullWidth class="form-control" placeholder="Email">
+            <div *ngIf="EmployeForm.get('email').invalid && EmployeForm.get('email').touched">
+              <span class="text-danger" *ngIf="EmployeForm.get('email').errors?.required">Email requis</span>
+            </div>
+          </div>
+
+
+        <button type="submit" nbButton fullWidth status="success" size="large">{{id ? "Modifier" : "Ajouter"}}</button>
+        </div>  </form>
+    </div>
+  </nb-card-body>
+</nb-card>

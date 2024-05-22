@@ -1,0 +1,22 @@
+<a routerLink="/customer/hotels/{{hotel?.id}}">
+  <div class="subject-card" style="padding-top: 20px;">
+    <div class="subject-card-header p-4">
+      <a href="#" class="card_title p-lg-4d-block">
+        <div class="row align-items-center">
+          <div class="col-sm-5 subject-img">
+            <img src="../../assets/images/g1.jpg" class="img-fluid" alt="">
+          </div>
+          <div class="col-sm-7 subject-content mt-sm-0 mt-4">
+            <h4>{{hotel?.region?.ville}}, {{hotel?.region?.pays}}</h4>
+            <!-- <p>3Days, 4 Nights</p> -->
+            <div class="dst-btm">
+              <h6 class=""> Start From </h6>
+              <span>{{countDefaultPrice(hotel)}} dt</span>
+            </div>
+            <p class="sub-para">Per person on twin sharing</p>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</a>
